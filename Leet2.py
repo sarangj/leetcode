@@ -23,16 +23,10 @@ class Solution(object):
                 curr.next = ListNode(carry)
             return    
 
-        # If one of the lists is longer, we just need to append the tail
-        if l1 is None:
-            curr.next = l2.next
-            return
+        v1 = 0 if l1 is None else l1.val
+        v2 = 0 if l2 is None else l2.val
 
-        if l2 is None:
-            curr.next = l1.next
-            return 
-
-        v = l1.val + l2.val + carry
+        v = v1 + v2 + carry
         newCarry = v / 10
         next = ListNode(v % 10)
         curr.next = next
