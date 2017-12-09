@@ -23,4 +23,5 @@ class Solution(object):
         v = l1.val + l2.val + carry
         newCarry = v / 10
         next = ListNode(v % 10)
+        curr.next = next
         self.computeNext(next, l1.next, l2.next, newCarry)
