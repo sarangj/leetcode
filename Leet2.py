@@ -30,4 +30,6 @@ class Solution(object):
         newCarry = v / 10
         next = ListNode(v % 10)
         curr.next = next
-        self.computeNext(next, l1.next, l2.next, newCarry)
+        next1 = None if l1 is None else l1.next
+        next2 = None if l2 is None else l2.next
+        self.computeNext(next, next1, next2, newCarry)
