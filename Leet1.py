@@ -9,6 +9,5 @@ class Solution:
         for i, num in enumerate(nums):
             if num in rmap:
                 return [rmap[num], i]
-            if abs(num) <= abs(target):
-                rmap[target - num] = i
+            rmap[target - num] = i
         return
