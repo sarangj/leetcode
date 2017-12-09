@@ -17,16 +17,10 @@ class Solution(object):
         return node
 
     def computeNext(self, curr, l1, l2, carry):
+        # Assume they are the same length
+        if l1 is None:
+            return    
         v = l1.val + l2.val + carry
         newCarry = v / 10
-        # assume l1 and l2 are the same length...
-        if l1.next is None:
-            if v > 9:
-                next = ListNode(newCarry)
-                next.next = ListNode(v / 10)
-                curr.next = next
-            curr.next = ListNode(v % 10)
         next = ListNode(v % 10)
         self.computeNext(next, l1.next, l2.next, newCarry)
-
-            
