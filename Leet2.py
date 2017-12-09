@@ -18,8 +18,18 @@ class Solution(object):
 
     def computeNext(self, curr, l1, l2, carry):
         # Assume they are the same length
-        if l1 is None:
+        if l1 is None && l2 is None:
             return    
+
+        # If one of the lists is longer, we just need to append the tail
+        if l1 is None:
+            curr.next = l2.next
+            return
+
+        if l2 is None:
+            curr.next = l1.next
+            return 
+
         v = l1.val + l2.val + carry
         newCarry = v / 10
         next = ListNode(v % 10)
