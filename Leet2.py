@@ -18,6 +18,6 @@ class Solution(object):
         i = 0
         while True:
             res += l.val * (10**i)
-            i++
+            i += 1
             if (l.next is None):
                 return res
