@@ -13,11 +13,8 @@ class Solution(object):
         """
         return self.toInt(l1) + self.toInt(l2)
 
-    def toInt(self, l):
-        res = 0
-        i = 0
-        while True:
-            res += l.val * (10**i)
-            i += 1
-            if (l.next is None):
-                return res
+    def toInt(self, l, curr, i):
+        res = curr + (l.val * (10**i))
+        if l.next is None:
+            return res
+        return self.toInt(l.next, res, i + 1)
