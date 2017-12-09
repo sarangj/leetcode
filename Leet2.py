@@ -11,7 +11,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        return self.toInt(l1) + self.toInt(l2)
+        return self.toInt(l1, 0, 0) + self.toInt(l2, 0, 0)
 
     def toInt(self, l, curr, i):
         res = curr + (l.val * (10**i))
