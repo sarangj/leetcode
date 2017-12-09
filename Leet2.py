@@ -19,6 +19,8 @@ class Solution(object):
     def computeNext(self, curr, l1, l2, carry):
         # Assume they are the same length
         if l1 is None and l2 is None:
+            if carry > 0:
+                curr.next = ListNode(carry)
             return    
 
         # If one of the lists is longer, we just need to append the tail
